@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b0x0saji60c3d"]
+
+[ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
+height = 26.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=606604133]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2036271519]
+position = Vector2(0, -35)
+zoom = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852442908]
+texture = ExtResource("1_kelma")
+offset = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079175236]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_y8w33")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1434408624]
+position = Vector2(0, -147)
