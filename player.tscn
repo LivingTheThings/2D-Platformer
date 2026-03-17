@@ -67,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.03333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("1_kelma"), ExtResource("3_i3pqv")]
+"values": [ExtResource("3_i3pqv"), ExtResource("1_kelma")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dw050"]
