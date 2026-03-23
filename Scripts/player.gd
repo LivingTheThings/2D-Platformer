@@ -47,12 +47,18 @@ func _manage_animation():
 func take_damage(amount: int):
 	health -= amount 
 	OnUpdateHealth.emit(health)
+	damage_flash()
 	if health <= 0:
 		call_deferred("game_over")
-		
+	
 func game_over():
 	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
 	
 func increase_score (amount : int):
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)	
+
+func damage_flash():
+	sprite.modulate = Color.RED
+	await get_tree().create_timer(0.05).timeout
+	sprite.modulate = Color.WHITE
