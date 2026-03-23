@@ -79,7 +79,7 @@ _data = {
 &"move": SubResource("Animation_2hs0m")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=650129674]
+[node name="Player" type="CharacterBody2D" unique_id=650129674 groups=["Players"]]
 script = ExtResource("1_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1168994309]
