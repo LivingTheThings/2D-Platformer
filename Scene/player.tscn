@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://b0x0saji60c3d"]
+[gd_scene format=3 uid="uid://dpcmbrk7yimsi"]
 
 [ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://dpp777y3k6ivg" path="res://Scripts/player_ui.gd" id="4_ivevv"]
+[ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="5_r6jsd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
 height = 26.0
@@ -79,6 +81,11 @@ _data = {
 &"move": SubResource("Animation_2hs0m")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_p6qlh"]
+font_size = 50
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.54509807)
+
 [node name="Player" type="CharacterBody2D" unique_id=650129674 groups=["Players"]]
 script = ExtResource("1_onrkg")
 
@@ -99,3 +106,35 @@ position = Vector2(0, -147)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=784387587]
 libraries/ = SubResource("AnimationLibrary_dw050")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=620521374]
+script = ExtResource("4_ivevv")
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1095408665]
+offset_left = 65.0
+offset_top = 113.0
+offset_right = 311.0
+offset_bottom = 205.0
+text = "Score: 500"
+label_settings = SubResource("LabelSettings_p6qlh")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=775849470]
+offset_left = 47.0
+offset_top = 46.0
+offset_right = 315.0
+offset_bottom = 131.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=644212632]
+layout_mode = 2
+texture = ExtResource("5_r6jsd")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1722770310]
+layout_mode = 2
+texture = ExtResource("5_r6jsd")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=805008703]
+layout_mode = 2
+texture = ExtResource("5_r6jsd")
+expand_mode = 2
