@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://blxp43lrr64p2"]
+
+[ext_resource type="Script" uid="uid://bd5irt7mg6nfy" path="res://Scripts/background_parallax.gd" id="1_43cbn"]
+[ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_43cbn"]
+[ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="3_jte5b"]
+[ext_resource type="PackedScene" uid="uid://dpcmbrk7yimsi" path="res://Scene/player.tscn" id="4_71r3i"]
+[ext_resource type="PackedScene" uid="uid://nr8cjpynod6t" path="res://Scene/coin.tscn" id="5_nwjwq"]
+[ext_resource type="PackedScene" uid="uid://deno7ouei7hlf" path="res://Scene/enemy.tscn" id="6_67jix"]
+[ext_resource type="PackedScene" uid="uid://bsy2nmycgdid2" path="res://Scene/end_flag.tscn" id="7_f3pwq"]
+
+[node name="Main" type="Node2D" unique_id=1811326104]
+
+[node name="Background" type="Node2D" parent="." unique_id=342597459]
+script = ExtResource("1_43cbn")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background" unique_id=638631470]
+position = Vector2(-1, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_43cbn")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background" unique_id=891551896]
+position = Vector2(511, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_43cbn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1116482508]
+position = Vector2(88, 13)
+tile_map_data = PackedByteArray("AAD5/wAAAAACAAMAAAD6/wAAAAACAAMAAAD7/wAAAAACAAMAAAD8/wAAAAADAAMAAAD4/wAAAAABAAMAAAD4/wEAAAABAAYAAAD5/wEAAAACAAYAAAD6/wEAAAACAAYAAAD7/wEAAAACAAYAAAD8/wEAAAADAAYAAAD8/wIAAAADAAYAAAD7/wIAAAACAAYAAAD6/wIAAAACAAYAAAD5/wIAAAACAAYAAAD4/wIAAAABAAYAAAD4/wMAAAABAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAADAAYAAAD8/wQAAAADAAYAAAD4/wQAAAABAAYAAAD4/wUAAAABAAcAAAD8/wUAAAADAAcAAAD5/wUAAAACAAcAAAD6/wUAAAACAAcAAAD7/wUAAAACAAcAAAD5/wQAAAACAAYAAAD6/wQAAAACAAYAAAD7/wQAAAACAAYAAAAAAAQAAAACAAYAAAAAAAMAAAACAAYAAAAAAAIAAAACAAYAAAD//wQAAAABAAYAAAD//wMAAAABAAYAAAD//wIAAAABAAYAAAABAAIAAAADAAYAAAABAAMAAAADAAYAAAABAAQAAAADAAYAAAD//wEAAAABAAMAAAABAAEAAAADAAMAAAAAAAEAAAACAAMAAAAAAAUAAAACAAcAAAABAAUAAAADAAcAAAD//wUAAAABAAcAAAAFAAEAAAAJAAUAAAAFAAAAAAAJAAQAAAAFAP7/AAAJAAQAAAAFAP//AAAJAAQAAAAFAP3/AAAFAAMAAAAFAAIAAAAEAAUAAAAJAAAAAAAFAAMAAAAJAAEAAAAJAAQAAAAJAAIAAAAJAAQAAAAJAAMAAAAJAAQAAAAJAAQAAAAJAAUAAAAJAAUAAAAEAAUAAAA=")
+tile_set = ExtResource("3_jte5b")
+
+[node name="Player" parent="." unique_id=1473550353 instance=ExtResource("4_71r3i")]
+position = Vector2(-10, 13)
+
+[node name="Coins" type="Node" parent="." unique_id=1394881774]
+
+[node name="Coin" parent="Coins" unique_id=27877150 instance=ExtResource("5_nwjwq")]
+position = Vector2(19, 6)
+
+[node name="Coin2" parent="Coins" unique_id=1557617076 instance=ExtResource("5_nwjwq")]
+position = Vector2(103, 21)
+
+[node name="Coin3" parent="Coins" unique_id=126810206 instance=ExtResource("5_nwjwq")]
+position = Vector2(199, 39)
+
+[node name="Coin4" parent="Coins" unique_id=1285505332 instance=ExtResource("5_nwjwq")]
+position = Vector2(400, 37)
+
+[node name="Coin5" parent="Coins" unique_id=74989657 instance=ExtResource("5_nwjwq")]
+position = Vector2(558, 20)
+
+[node name="Enemies" type="Node" parent="." unique_id=1384944551]
+
+[node name="Enemy" parent="Enemies" unique_id=106917760 instance=ExtResource("6_67jix")]
+position = Vector2(51, 17)
+
+[node name="Enemy2" parent="Enemies" unique_id=593402121 instance=ExtResource("6_67jix")]
+position = Vector2(261, 50)
+move_speed = 40.0
+
+[node name="Enemy3" parent="Enemies" unique_id=685483220 instance=ExtResource("6_67jix")]
+position = Vector2(323, 50)
+
+[node name="EndFlag" parent="." unique_id=1373235096 instance=ExtResource("7_f3pwq")]
+position = Vector2(583, 22)
+scene_to_load = ExtResource("4_71r3i")

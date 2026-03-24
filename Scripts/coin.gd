@@ -8,7 +8,7 @@ var bob_speed : float = 5.0
 
 @onready var sprite : Sprite2D = $Sprite2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var time = Time.get_unix_time_from_system()
 	
 	# rotate
