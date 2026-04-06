@@ -13,7 +13,7 @@ func _ready():
 	player.OnUpdateHealth.connect(_update_heart)
 	player.OnUpdateScore.connect(_update_score)
 	
-	_update_score(player.health)
+	_update_heart(player.health)
 	_update_score(PlayerStats.score)
 	
 func _update_heart(health : int):

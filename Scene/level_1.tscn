@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://deno7ouei7hlf" path="res://Scene/enemy.tscn" id="4_6544n"]
 [ext_resource type="PackedScene" uid="uid://nr8cjpynod6t" path="res://Scene/coin.tscn" id="5_poeaa"]
 [ext_resource type="PackedScene" uid="uid://bsy2nmycgdid2" path="res://Scene/end_flag.tscn" id="6_ufara"]
+[ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="8_3rcer"]
 
 [node name="Main" type="Node2D" unique_id=1811326104]
 
@@ -14,11 +15,13 @@
 script = ExtResource("1_ws63c")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="Background" unique_id=638631470]
+modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
 position = Vector2(-1, -42)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5exfe")
 
 [node name="BackgroundSprite2" type="Sprite2D" parent="Background" unique_id=891551896]
+modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
 position = Vector2(511, -42)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5exfe")
@@ -62,4 +65,4 @@ position = Vector2(323, 50)
 
 [node name="EndFlag" parent="." unique_id=1373235096 instance=ExtResource("6_ufara")]
 position = Vector2(583, 22)
-scene_to_load = ExtResource("3_6544n")
+scene_to_load = ExtResource("8_3rcer")

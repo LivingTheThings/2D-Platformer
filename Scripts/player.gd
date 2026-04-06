@@ -61,7 +61,8 @@ func take_damage(amount: int):
 		call_deferred("game_over")
 	
 func game_over():
-	get_tree().change_scene_to_file("res://Scene/level_1.tscn")
+	PlayerStats.score = 0
+	get_tree().change_scene_to_file("res://menu.tscn")
 	
 func increase_score (amount : int):
 	play_sound(coin_sfx)

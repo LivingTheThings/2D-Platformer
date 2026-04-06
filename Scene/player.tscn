@@ -109,7 +109,7 @@ libraries/ = SubResource("AnimationLibrary_dw050")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=108539566]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=620521374]
-visible = false
+visible = true
 script = ExtResource("4_ivevv")
 
 [node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1095408665]
