@@ -109,10 +109,10 @@ libraries/ = SubResource("AnimationLibrary_dw050")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=108539566]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=620521374]
-visible = true
 script = ExtResource("4_ivevv")
 
 [node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1095408665]
+visible = false
 offset_left = 65.0
 offset_top = 113.0
 offset_right = 311.0
@@ -121,6 +121,7 @@ text = "Score: 500"
 label_settings = SubResource("LabelSettings_p6qlh")
 
 [node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=775849470]
+visible = false
 offset_left = 47.0
 offset_top = 46.0
 offset_right = 315.0
