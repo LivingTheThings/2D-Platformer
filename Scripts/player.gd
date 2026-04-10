@@ -36,6 +36,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 
+
+
 func _process(_delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0 
