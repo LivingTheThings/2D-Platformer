@@ -1,16 +1,39 @@
-[gd_scene format=3 uid="uid://dpcmbrk7yimsi"]
+[gd_scene load_steps=20 format=3 uid="uid://dpcmbrk7yimsi"]
 
-[ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://dx1rw5uovjk7t" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Script" uid="uid://c3si0ir6sr02w" path="res://Scene/camera_shake.gd" id="2_r6jsd"]
-[ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dhyf4mub1l6ye" path="res://AssetManager/Sprites/Player/walking/walkingchgar1.png" id="3_2dof7"]
+[ext_resource type="Texture2D" uid="uid://dg1or7gui6grm" path="res://AssetManager/Sprites/Player/walking/walkingchgar4.png" id="4_4ao7i"]
 [ext_resource type="Script" uid="uid://dpp777y3k6ivg" path="res://Scripts/player_ui.gd" id="4_ivevv"]
+[ext_resource type="Texture2D" uid="uid://colrj1lkv3pvb" path="res://AssetManager/Sprites/Player/walking/walkingchgar3.png" id="5_1sypm"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="5_r6jsd"]
+[ext_resource type="Texture2D" uid="uid://bcgysjgfsty5v" path="res://AssetManager/Sprites/Player/walking/walkingchgar5.png" id="6_fn0wv"]
+[ext_resource type="Texture2D" uid="uid://bnxfg4o24k6mc" path="res://AssetManager/Sprites/Player/walking/walkingchgar6.png" id="7_eqmt2"]
+[ext_resource type="Texture2D" uid="uid://cfljf18cg57h8" path="res://AssetManager/Sprites/Player/jump/jump.png" id="8_c40dt"]
+[ext_resource type="Texture2D" uid="uid://dge0wkcd3a58x" path="res://AssetManager/Sprites/Player/idle/idle1.png" id="9_lgjog"]
+[ext_resource type="Texture2D" uid="uid://b2wt0yhgokete" path="res://AssetManager/Sprites/Player/idle/idle2.png" id="10_lhccw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y8w33"]
 height = 26.0
 
-[sub_resource type="Animation" id="Animation_sweqy"]
+[sub_resource type="Animation" id="Animation_7d6xm"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_2dof7"), ExtResource("4_4ao7i"), ExtResource("5_1sypm"), ExtResource("4_4ao7i"), ExtResource("6_fn0wv"), ExtResource("7_eqmt2")]
+}
+
+[sub_resource type="Animation" id="Animation_2sr8w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -22,44 +45,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_kelma")]
+"values": [ExtResource("3_2dof7")]
 }
 
-[sub_resource type="Animation" id="Animation_hqtel"]
-resource_name = "new_animation"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_kelma")]
-}
-
-[sub_resource type="Animation" id="Animation_1jxqw"]
+[sub_resource type="Animation" id="Animation_1vqkc"]
 resource_name = "jump"
 length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_i3pqv")]
-}
-
-[sub_resource type="Animation" id="Animation_2hs0m"]
-resource_name = "move"
-length = 0.15
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -68,18 +59,35 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_i3pqv"), ExtResource("1_kelma")]
+"values": [ExtResource("8_c40dt")]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dw050"]
+[sub_resource type="Animation" id="Animation_uktg4"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("9_lgjog"), ExtResource("10_lhccw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jx4b7"]
 _data = {
-&"RESET": SubResource("Animation_sweqy"),
-&"idle": SubResource("Animation_hqtel"),
-&"jump": SubResource("Animation_1jxqw"),
-&"move": SubResource("Animation_2hs0m")
+&"RESET": SubResource("Animation_2sr8w"),
+&"idle": SubResource("Animation_uktg4"),
+&"jump": SubResource("Animation_1vqkc"),
+&"walk": SubResource("Animation_7d6xm")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6qlh"]
@@ -87,31 +95,34 @@ font_size = 50
 shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.54509807)
 
-[node name="Player" type="CharacterBody2D" unique_id=650129674 groups=["Players"]]
+[node name="Player" type="CharacterBody2D" groups=["Players"]]
 script = ExtResource("1_onrkg")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1168994309]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -35)
 zoom = Vector2(3, 3)
 script = ExtResource("2_r6jsd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1781744358]
-texture = ExtResource("1_kelma")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -14)
+texture = ExtResource("3_2dof7")
 offset = Vector2(0, -12)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=297140971]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_y8w33")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=784387587]
-libraries/ = SubResource("AnimationLibrary_dw050")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jx4b7")
+}
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=108539566]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=620521374]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_ivevv")
 
-[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1095408665]
+[node name="ScoreText" type="Label" parent="CanvasLayer"]
 visible = false
 offset_left = 65.0
 offset_top = 113.0
@@ -120,24 +131,24 @@ offset_bottom = 205.0
 text = "Score: 500"
 label_settings = SubResource("LabelSettings_p6qlh")
 
-[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=775849470]
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
 visible = false
 offset_left = 47.0
 offset_top = 46.0
 offset_right = 315.0
 offset_bottom = 131.0
 
-[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=644212632]
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer"]
 layout_mode = 2
 texture = ExtResource("5_r6jsd")
 expand_mode = 2
 
-[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1722770310]
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
 layout_mode = 2
 texture = ExtResource("5_r6jsd")
 expand_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=805008703]
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
 layout_mode = 2
 texture = ExtResource("5_r6jsd")
 expand_mode = 2
