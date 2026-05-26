@@ -12,14 +12,14 @@ script = ExtResource("1_1fhj5")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="Background"]
 modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
-position = Vector2(289, -164.00002)
-scale = Vector2(4.4278545, 3.566358)
+position = Vector2(317.00003, -14)
+scale = Vector2(5, 4.027)
 texture = ExtResource("2_16pka")
 
 [node name="BackgroundSprite2" type="Sprite2D" parent="Background"]
 modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
-position = Vector2(5803, 0)
-scale = Vector2(10.076, 11)
+position = Vector2(3197, -14)
+scale = Vector2(5, 4.027)
 texture = ExtResource("2_16pka")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -28,4 +28,4 @@ tile_map_data = PackedByteArray("AAD5/wAAAAACAAEAAAD6/wAAAAACAAEAAAD7/wAAAAACAAE
 tile_set = ExtResource("3_j8bo8")
 
 [node name="Player" parent="." instance=ExtResource("4_1jdk1")]
-position = Vector2(-30, 9)
+position = Vector2(-21, -3)
