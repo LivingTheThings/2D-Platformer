@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnncl5gv36lae"]
+
+[ext_resource type="Script" uid="uid://bd5irt7mg6nfy" path="res://Scripts/background_parallax.gd" id="1_1fhj5"]
+[ext_resource type="Texture2D" uid="uid://tkuy6grx001m" path="res://AssetManager/Background/nature_4/orig.png" id="2_16pka"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("1_1fhj5")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="Background"]
+modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
+scale = Vector2(10.076, 11)
+texture = ExtResource("2_16pka")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="Background"]
+modulate = Color(0.74365765, 0.99769443, 0.76361716, 1)
+position = Vector2(5803, 0)
+scale = Vector2(10.076, 11)
+texture = ExtResource("2_16pka")
