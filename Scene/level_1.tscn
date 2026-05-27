@@ -46,7 +46,7 @@ tile_set = ExtResource("1_8ko5r")
 script = ExtResource("4_2ceuy")
 
 [node name="Player" parent="." unique_id=1473550353 instance=ExtResource("3_6544n")]
-position = Vector2(362, 47)
+position = Vector2(-22, 6)
 
 [node name="Coins" type="Node" parent="." unique_id=1394881774]
 
