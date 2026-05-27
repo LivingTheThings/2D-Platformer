@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_43cbn"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="3_jte5b"]
 [ext_resource type="PackedScene" uid="uid://dpcmbrk7yimsi" path="res://Scene/player.tscn" id="4_71r3i"]
+[ext_resource type="Script" uid="uid://c0f4dvwe7htu3" path="res://Scripts/ladder.gd" id="4_jte5b"]
 [ext_resource type="PackedScene" uid="uid://nr8cjpynod6t" path="res://Scene/coin.tscn" id="5_nwjwq"]
 [ext_resource type="PackedScene" uid="uid://deno7ouei7hlf" path="res://Scene/enemy.tscn" id="6_67jix"]
 [ext_resource type="PackedScene" uid="uid://bsy2nmycgdid2" path="res://Scene/end_flag.tscn" id="7_f3pwq"]
@@ -30,6 +31,7 @@ texture = ExtResource("2_43cbn")
 position = Vector2(88, 13)
 tile_map_data = PackedByteArray("AAD5/wAAAAACAAMAAAD6/wAAAAACAAMAAAD7/wAAAAACAAMAAAD8/wAAAAADAAMAAAD4/wAAAAABAAMAAAD4/wEAAAABAAYAAAD5/wEAAAACAAYAAAD6/wEAAAACAAYAAAD7/wEAAAACAAYAAAD8/wEAAAADAAYAAAD8/wIAAAADAAYAAAD7/wIAAAACAAYAAAD6/wIAAAACAAYAAAD5/wIAAAACAAYAAAD4/wIAAAABAAYAAAD4/wMAAAABAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAADAAYAAAD8/wQAAAADAAYAAAD4/wQAAAABAAYAAAD4/wUAAAABAAcAAAD8/wUAAAADAAcAAAD5/wUAAAACAAcAAAD6/wUAAAACAAcAAAD7/wUAAAACAAcAAAD5/wQAAAACAAYAAAD6/wQAAAACAAYAAAD7/wQAAAACAAYAAAAAAAQAAAACAAYAAAAAAAMAAAACAAYAAAAAAAIAAAACAAYAAAD//wQAAAABAAYAAAD//wMAAAABAAYAAAD//wIAAAABAAYAAAABAAIAAAADAAYAAAABAAMAAAADAAYAAAABAAQAAAADAAYAAAD//wEAAAABAAMAAAABAAEAAAADAAMAAAAAAAEAAAACAAMAAAAAAAUAAAACAAcAAAABAAUAAAADAAcAAAD//wUAAAABAAcAAAAFAAEAAAAJAAUAAAAFAAAAAAAJAAQAAAAFAP7/AAAJAAQAAAAFAP//AAAJAAQAAAAFAP3/AAAFAAMAAAAFAAIAAAAEAAUAAAAQAP//AAAFAAMAAAAQAAAAAAAJAAQAAAAQAAEAAAAJAAQAAAAQAAIAAAAJAAQAAAAQAAMAAAAJAAUAAAAQAAQAAAAEAAUAAAATAAYAAAAIAAIAAAAUAAYAAAAGAAEAAAAVAAYAAAAGAAEAAAAWAAYAAAAGAAEAAAAXAAYAAAAKAAIAAAAKAAEAAAAGAAEAAAA=")
 tile_set = ExtResource("3_jte5b")
+script = ExtResource("4_jte5b")
 
 [node name="Player" parent="." unique_id=1473550353 instance=ExtResource("4_71r3i")]
 position = Vector2(-10, 13)
