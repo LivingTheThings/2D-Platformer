@@ -8,7 +8,10 @@ extends Area2D
 
 
 func _ready ():
-	$AnimationPlayer.play("fly")
+	if $AnimationPlayer.has_animation("idle"):
+		$AnimationPlayer.play("idle")
+	else:
+		$AnimationPlayer.play("fly")
 
 func _physics_process(delta: float) -> void:
 	global_position = global_position.move_toward(target_pos, move_speed * delta)

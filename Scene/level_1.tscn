@@ -9,8 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://nr8cjpynod6t" path="res://Scene/coin.tscn" id="5_poeaa"]
 [ext_resource type="PackedScene" uid="uid://bsy2nmycgdid2" path="res://Scene/end_flag.tscn" id="6_ufara"]
 [ext_resource type="PackedScene" uid="uid://blxp43lrr64p2" path="res://Scene/level_2.tscn" id="8_3rcer"]
+[ext_resource type="Script" path="res://Scripts/wind_gust_spawner.gd" id="9_wind"]
+[ext_resource type="PackedScene" path="res://Scene/WindGust.tscn" id="10_wind"]
 
 [node name="Main" type="Node2D" unique_id=1811326104]
+
+[node name="WindGusts" type="Node2D" parent="."]
+z_index = 20
+script = ExtResource("9_wind")
+wind_gust_scene = ExtResource("10_wind")
+area_min = Vector2(-100, -115)
+area_max = Vector2(1450, 125)
 
 [node name="Background" type="Node2D" parent="." unique_id=342597459]
 script = ExtResource("1_ws63c")

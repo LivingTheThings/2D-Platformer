@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bokxrk6kelpk1"]
+
+[ext_resource type="Script" uid="uid://dhqll5v143a2t" path="res://Scripts/leaf_falling.gd" id="1_leaf"]
+[ext_resource type="Texture2D" path="res://AssetManager/Sprites/leaf.png" id="2_leaf"]
+
+[node name="LeafFalling" type="Node2D" unique_id=1720503903]
+z_index = 45
+script = ExtResource("1_leaf")
+leaf_texture = ExtResource("2_leaf")
+amount = 26

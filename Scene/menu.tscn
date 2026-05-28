@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://byr7xwu7f3oj"]
+
+[ext_resource type="Script" uid="uid://bs2pgrucpx0ku" path="res://Scripts/menu.gd" id="1_eas8t"]
+[ext_resource type="Texture2D" uid="uid://7rccs5fsoilo" path="res://AssetManager/Background/nature_5/origbig.png" id="2_eas8t"]
+[ext_resource type="Texture2D" uid="uid://r4hb7uhxkym" path="res://AssetManager/Sprites/play.png" id="3_6hgn1"]
+[ext_resource type="PackedScene" path="res://Scene/WindGust.tscn" id="3_u2k45"]
+[ext_resource type="Texture2D" uid="uid://dmdvxrgckdqn5" path="res://AssetManager/Sprites/quit.png" id="4_fyf5i"]
+[ext_resource type="Texture2D" uid="uid://cj3yoy18kmtvo" path="res://AssetManager/Sprites/Title.png" id="5_6hgn1"]
+
+[node name="Menu" type="Control" unique_id=1239511632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eas8t")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=472692906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -605.0
+offset_right = 870.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eas8t")
+
+[node name="PlayButton" type="Button" parent="." unique_id=1807494380]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 284.0
+offset_right = 2277.0
+offset_bottom = 1179.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("3_6hgn1")
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=1129604812]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 405.0
+offset_right = 674.0
+offset_bottom = 484.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("4_fyf5i")
+
+[node name="WindGust" parent="." unique_id=1735656138 instance=ExtResource("3_u2k45")]
+position = Vector2(407, 313)
+
+[node name="WindGust2" parent="." unique_id=260659860 instance=ExtResource("3_u2k45")]
+position = Vector2(187, 143)
+
+[node name="WindGust3" parent="." unique_id=1442274676 instance=ExtResource("3_u2k45")]
+position = Vector2(534, 507)
+
+[node name="WindGust4" parent="." unique_id=1068897665 instance=ExtResource("3_u2k45")]
+position = Vector2(581, 135)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766101569]
+position = Vector2(580, 158)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_6hgn1")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

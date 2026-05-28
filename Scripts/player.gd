@@ -8,7 +8,8 @@ signal OnUpdateScore(score : int)
 @export var braking : float = 20
 @export var gravity : float = 500
 @export var jump_force : float = 200
-@export var climb_speed : float
+@export var climb_speed : float = 100
+@export var game_over_y: float = 200
 @export var target_spike_cd: float = 0.0
 var move_input : float 
 var debloat: bool = false
@@ -26,7 +27,7 @@ var during_double :bool = false
 var is_climb = false
 var take_damage_sfx : AudioStream = preload("res://Audio/take_damage.wav")
 var coin_sfx : AudioStream = preload("res://Audio/coin.wav")
-
+var take_item_sfx : AudioStream = preload("res://Audio/take_item.mp3")
 
 
 func _physics_process(delta: float) -> void:
@@ -34,12 +35,12 @@ func _physics_process(delta: float) -> void:
 	var bool_damage = tile_map.touched_spike(global_position)
 	var bool_climb = tile_map._on_ladder_on_player(global_position)
 	var gem_activated = tile_map.touched_gem(global_position)
-	var is_damage = true
 	move_input = Input.get_axis("move_left", "move_right")
 
 	if gem_activated and not was_touching_gem:
 		has_double_jump = true
 		during_double = false
+		play_sound(take_item_sfx)
 	was_touching_gem = gem_activated
 
 	if bool_climb and climb_input != 0:
@@ -71,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, braking * delta)
 
-	if bool_damage and not debloat:
+	if bool_damage and not debloat: #i called debloat i forgot the name of the other one but it starts with de-
 		debloat = true
 		
 		take_damage(1)
@@ -88,7 +89,7 @@ func _process(_delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0 
 		
-	if global_position.y > 200:
+	if global_position.y > game_over_y:
 		game_over()
 	_manage_animation()
 
@@ -110,7 +111,7 @@ func take_damage(amount: int):
 	
 func game_over():
 	PlayerStats.score = 0
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://Scene/menu.tscn")
 	
 func increase_score (amount : int):
 	play_sound(coin_sfx)

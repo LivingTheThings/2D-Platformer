@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dh6hqiw3cw8wn"]
+
+[ext_resource type="Texture2D" uid="uid://dt2tpypc6vq02" path="res://AssetManager/Sprites/key.png" id="1_up4cr"]
+[ext_resource type="Script" uid="uid://r1rmv43ou1fg" path="res://Scripts/key.gd" id="2_7y2ot"]
+[ext_resource type="PackedScene" uid="uid://cnncl5gv36lae" path="res://Scene/level_3.tscn" id="3_j6u5e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0yg6"]
+radius = 24.04683
+
+[node name="Key" type="Area2D" unique_id=1134269560]
+collision_layer = 0
+script = ExtResource("2_7y2ot")
+scene_to_load = ExtResource("3_j6u5e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1171273658]
+scale = Vector2(0.009, 0.009)
+texture = ExtResource("1_up4cr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613984716]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_p0yg6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

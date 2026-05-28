@@ -1085,5 +1085,7 @@ custom_data_layer_0/name = "type"
 custom_data_layer_0/type = 4
 custom_data_layer_1/name = "spike"
 custom_data_layer_1/type = 1
+custom_data_layer_2/name = "Gem"
+custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_tfbar")
 sources/1 = SubResource("TileSetAtlasSource_2pjr7")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/WindGust.gd" id="1_wind"]
+
+[sub_resource type="Curve" id="Curve_width"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_color"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.85, 1, 1, 0, 0.85, 1, 1, 0.65, 0.85, 1, 1, 0)
+
+[sub_resource type="Curve2D" id="Curve_path"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -60, -18, 60, 18, 160, -20, -80, 10, 80, -10, 320, 18, -40, 0, 40, 0, 470, -8)
+}
+point_count = 4
+
+[node name="WindGust" type="Line2D"]
+z_index = 50
+width = 7.0
+width_curve = SubResource("Curve_width")
+default_color = Color(0.9, 1, 1, 0.95)
+antialiased = true
+script = ExtResource("1_wind")
+trail_length = 0.55
+trail_speed = 0.01
+trail_color_gradient = SubResource("Gradient_color")
+random_y_offset = 18.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve_path")

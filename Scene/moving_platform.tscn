@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bl58a6oc0m88m"]
+
+[ext_resource type="Texture2D" uid="uid://cb3ntpb11dunp" path="res://AssetManager/Sprites/Platform.png" id="1_q06lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrpga"]
+size = Vector2(52, 13)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=884476076]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923287708]
+scale = Vector2(0.21484375, 0.21484375)
+texture = ExtResource("1_q06lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1101745278]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_hrpga")
