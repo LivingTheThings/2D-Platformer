@@ -2,6 +2,10 @@
 .godot/
 .nomedia
 
+# Godot sidecar metadata is required on other machines.
+!*.import
+!*.uid
+
 # Godot-specific ignores
 .import/
 export.cfg

@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var scene_to_load : PackedScene
+@export_file("*.tscn") var scene_path: String = ""
 
 var collected: bool = false
 
@@ -33,7 +34,7 @@ func collect_key() -> void:
 	collected = true
 	PlayerStats.has_key = true
 
-	if scene_to_load == null:
-		return
-
-	get_tree().change_scene_to_packed(scene_to_load)
+	if scene_to_load != null:
+		get_tree().change_scene_to_packed(scene_to_load)
+	elif scene_path != "":
+		get_tree().change_scene_to_file(scene_path)

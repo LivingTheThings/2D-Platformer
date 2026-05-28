@@ -2,7 +2,10 @@ extends Node2D
 
 @onready var interactable_label: Label = $InteractLabel
 @onready var interact_range: Area2D = $InteractRange
+@onready var interact_shape: CollisionShape2D = $InteractRange/CollisionShape2D
 @export var scene_to_load : PackedScene
+@export_file("*.tscn") var scene_path: String = ""
+
 var player_in_range: bool = false
 var can_interact: bool = true
 
@@ -14,25 +17,37 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	update_player_in_range()
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		try_interact()
 
 
 func update_player_in_range() -> void:
-	player_in_range = false
-
-	for body in interact_range.get_overlapping_bodies():
-		if body.is_in_group("Players"):
-			player_in_range = true
-			break
+	player_in_range = has_player_in_range()
 
 	if player_in_range:
 		interactable_label.show()
 	else:
 		interactable_label.hide()
+
+
+func has_player_in_range() -> bool:
+	for body in interact_range.get_overlapping_bodies():
+		if body.is_in_group("Players"):
+			return true
+
+	var interact_radius := get_interact_radius()
+	for node in get_tree().get_nodes_in_group("Players"):
+		if node is Node2D and node.global_position.distance_to(global_position) <= interact_radius:
+			return true
+
+	return false
+
+
+func get_interact_radius() -> float:
+	if interact_shape.shape is CircleShape2D:
+		return interact_shape.shape.radius
+
+	return 19.0
 
 
 func try_interact() -> void:
@@ -49,13 +64,19 @@ func try_interact() -> void:
 
 
 func interact() -> void:
-	if scene_to_load == null:
-		can_interact = true
+	if scene_to_load != null:
+		var packed_error := get_tree().change_scene_to_packed(scene_to_load)
+		if packed_error != OK:
+			can_interact = true
 		return
 
-	var error := get_tree().change_scene_to_packed(scene_to_load)
-	if error != OK:
-		can_interact = true
+	if scene_path != "":
+		var file_error := get_tree().change_scene_to_file(scene_path)
+		if file_error != OK:
+			can_interact = true
+		return
+
+	can_interact = true
 
 func _on_interact_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Players"):

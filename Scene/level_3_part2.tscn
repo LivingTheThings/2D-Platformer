@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c571okduvwfkc" path="res://AssetManager/TileMaps/PixelWoods/Pixel_Woods_Tileset.png" id="8_yk814"]
 [ext_resource type="Script" uid="uid://c0f4dvwe7htu3" path="res://Scripts/ladder.gd" id="9_dbyt2"]
 [ext_resource type="PackedScene" uid="uid://dpcmbrk7yimsi" path="res://Scene/player.tscn" id="10_w4o5k"]
-[ext_resource type="Script" path="res://Scene/boss_camera_trigger.gd" id="11_jxq45"]
 [ext_resource type="Texture2D" uid="uid://cj3yoy18kmtvo" path="res://AssetManager/Sprites/Title.png" id="12_p1f1y"]
-[ext_resource type="Script" path="res://Scene/level_3_part2.gd" id="12_um3dh"]
 [ext_resource type="PackedScene" uid="uid://bsy2nmycgdid2" path="res://Scene/end_flag.tscn" id="13_abwk8"]
 [ext_resource type="PackedScene" uid="uid://byr7xwu7f3oj" path="res://Scene/menu.tscn" id="14_80rns"]
 
@@ -1380,7 +1378,6 @@ sources/1 = SubResource("TileSetAtlasSource_6cjiv")
 size = Vector2(20, 142)
 
 [node name="Main" type="Node2D" unique_id=424653264]
-script = ExtResource("12_um3dh")
 
 [node name="SundownCanvasModulate" type="CanvasModulate" parent="." unique_id=365569449]
 color = Color(0.41351473, 0.8277362, 0.66988295, 1)
@@ -1431,8 +1428,6 @@ position = Vector2(501, -55)
 zoom = Vector2(4, 4)
 
 [node name="Border" type="Area2D" parent="." unique_id=1147913964]
-script = ExtResource("11_jxq45")
-closing_platform_path = NodePath("")
 
 [node name="Enter" type="CollisionShape2D" parent="Border" unique_id=74234430]
 position = Vector2(654, -45)

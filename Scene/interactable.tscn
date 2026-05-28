@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bn0po0mxrqxjc"]
 
 [ext_resource type="Script" uid="uid://dw2q35kj03wop" path="res://Scene/interacting_component.gd" id="1_n3fwy"]
-[ext_resource type="PackedScene" uid="uid://csjbknaryah2e" path="res://Scene/cave.tscn" id="2_aalmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7fa8"]
 radius = 19.0
@@ -13,7 +12,7 @@ outline_color = Color(0, 0, 0, 0.85)
 
 [node name="InteractingComponent" type="Node2D" unique_id=145756986]
 script = ExtResource("1_n3fwy")
-scene_to_load = ExtResource("2_aalmg")
+scene_path = "res://Scene/cave.tscn"
 
 [node name="InteractRange" type="Area2D" parent="." unique_id=1857301268]
 collision_layer = 0
