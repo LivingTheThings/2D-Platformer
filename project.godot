@@ -24,6 +24,17 @@ config/icon="res://icon.svg"
 BgMusic="*res://Scripts/bg_music.gd"
 PlayerStats="*uid://ccui0s0b8osxh"
 
+[display]
+
+window/size/viewport_width=1152
+window/size/viewport_height=648
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/size/mode=0
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [input]
 
 move_left={
